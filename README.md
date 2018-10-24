@@ -88,7 +88,7 @@ Create the following functions:
 * `Player * draftPlayers(char * filename, int team, int num_players)`
     * The draft players function takes a filename for a file containing players in the following format:
         ```
-                    <team #>,<first name>,<last name>,<player_num>,<offense>,<defense>
+        <team #>,<first name>,<last name>,<player_num>,<offense>,<defense>
         ```
         * :bulb: I recommend the c library function `strtok` for parsing each line.
     * Each player information will be on a separate line
@@ -119,20 +119,20 @@ Create the following functions:
 
 Once you have your game working and the result is random, create a function:
 
-#### `Team * tournament(Team **, int)`
-* Takes an array of pointers to Team structs and the number of teams.
-    * You must verify the number of teams is a power of 2. If it is not, print a message saying the number of teams is invalid and return a NULL pointer.
-    * :bulb: Use your game function for each round to determine the rounds winners.
-* Because this is an elimination style tournament, each team should lose only once, while the winner goes on to the next round.
-* You will need to create unique matchups (no team plays more than one game per round) for each round between two teams, and discard the losers.
-    * :warning: MAKE SURE you do not delete the pointers from the league array. This will cause a memory leak.
-* You will need to keep track of the winners each round, and match them up on the next round.
-* Do not assume you will only have 8 teams. Your code should work with any power of 2 (8 | 16 | 32).
+* `Team * tournament(Team **, int)`
+    * Takes an array of pointers to Team structs and the number of teams.
+        * You must verify the number of teams is a power of 2. If it is not, print a message saying the number of teams is invalid and return a NULL pointer.
+        * :bulb: Use your game function for each round to determine the rounds winners.
+    * Because this is an elimination style tournament, each team should lose only once, while the winner goes on to the next round.
+    * You will need to create unique matchups (no team plays more than one game per round) for each round between two teams, and discard the losers.
+        * :warning: MAKE SURE you do not delete the pointers from the league array. This will cause a memory leak.
+    * You will need to keep track of the winners each round, and match them up on the next round.
+    * Do not assume you will only have 8 teams. Your code should work with any power of 2 (8 | 16 | 32).
 
 Lastly, you will need to write a function that cleans up memory for each team:
 
-#### `void deleteTeam(Team *)`
-* Takes a team pointer and deletes all memory
+* `void deleteTeam(Team *)`
+    * Takes a team pointer and deletes all memory
 
 You will need to point the team `delete` function pointer to this function
 
