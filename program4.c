@@ -112,6 +112,10 @@ int main(){
     printf("\n\t\t....Test Passed\n");
 
     printf("\n\t=========Test #6: Should result in a single winner===========\n\n");
+    winner = tournament(league, NUM_TEAMS/4);
+    assert(inLeague(winner, league));
+    winner = tournament(league, NUM_TEAMS/2);
+    assert(inLeague(winner, league));
     winner = tournament(league, NUM_TEAMS);
     assert(inLeague(winner, league));
     printf("\n************************ Result *******************************\n\n");
