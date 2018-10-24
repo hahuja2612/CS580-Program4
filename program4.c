@@ -7,7 +7,7 @@
 #include <assert.h>
 #include <string.h>
 
-#define DEBUG 0
+#define DEBUG 1
 
 #define NUM_TEAMS 32
 #define NUM_PLAYERS 10
@@ -33,6 +33,22 @@ int main(){
         "team14",
         "team15",
         "team16",
+        "team17",
+        "team18",
+        "team19",
+        "team20",
+        "team21",
+        "team22",
+        "team23",
+        "team24",
+        "team25",
+        "team26",
+        "team27",
+        "team28",
+        "team29",
+        "team30",
+        "team31",
+        "team32",
     };
 
     /********************************************************************/
@@ -51,7 +67,8 @@ int main(){
     //create teams i.e. league of N teams.
     for(int counter = 0; counter < NUM_TEAMS; counter++){
         Player * draft = draftPlayers("players.dat", counter, NUM_PLAYERS);
-        assert(draft[0].team == counter%NUM_TEAMS);
+        for(int i = 0; i < NUM_PLAYERS; i++)
+            assert(draft[0].team == counter%NUM_TEAMS);
         league[counter] = newTeam(team_names[counter], draft);
         assert(sizeof((league[counter]->players[rand() % NUM_PLAYERS])) == sizeof(Player));
         assert((league[counter]->players[rand() % NUM_PLAYERS]).offensive > 0);
@@ -78,7 +95,6 @@ int main(){
     assert(winner == team1 || winner == team2);
     printf("The winning team is %s\n\n", winner->name);
     printf("\n\t\t....Test Passed\n");
-
     printf("\n\t=========Test #4: Playing a Game between the same team===========\n\n");
     int team_num = rand() % NUM_TEAMS;
     printf("Up next, a a scrimmage for %s\n", league[team_num]->name);
@@ -125,10 +141,8 @@ int main(){
     for(int counter = 0; counter < NUM_TEAMS; counter++){
         league[counter]->delete(league[counter]);
     }
-
+    free(league);
     printf("\n\t=========All Tests Passed. Don't forget to check Valgrind!===========\n\n");
-
-    return 0;
 }
 
 int inLeague(Team * t, Team ** league){
