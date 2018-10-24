@@ -42,7 +42,7 @@
 * Style Guidelines and Memory Leaks
     * You will lose significant points for the following:
         * Makefile does not have requested format and labels (-5 points)
-        * Memory leak or error detected in valgrind without  (-5 points)
+        * Memory leak or error detected in valgrind  (-5 points)
         * Does not follow requested program structure and submission format (-10 points)
 
 ### Guidelines
