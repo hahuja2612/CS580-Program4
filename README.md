@@ -87,9 +87,9 @@ All of the player information will be read in from the player.dat file.
 Create the following functions:
 * `Player * draftPlayers(char * filename, int team, int num_players)`
     * The draft players function takes a filename for a file containing players in the following format:
-```
-            <team #>,<first name>,<last name>,<player_num>,<offense>,<defense>
-```
+        ```
+                    <team #>,<first name>,<last name>,<player_num>,<offense>,<defense>
+        ```
         * :bulb: I recommend the c library function `strtok` for parsing each line.
     * Each player information will be on a separate line
     * You are guaranteed to only have well formed files.
